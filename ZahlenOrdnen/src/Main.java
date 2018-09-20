@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Main {
-	//ArrayList zahlen = new ArrayList <>();
 
 	//{8,7,4,10,3,17,11,-4} Zahlen ordnen
 	
@@ -29,18 +28,15 @@ public class Main {
 						a[i]=zahlvorher; 
 						a[i-1]=zahl;
 					}
-					//if(zahlvorher>zahl);
-
 				}
-							
 			}			
-			
-		}		
+		}	
+		
 		printArray();
 	}
 	
 	
-	
+
 
 	 public static void printArray() 
 	{
