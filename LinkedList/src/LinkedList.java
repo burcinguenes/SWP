@@ -1,19 +1,20 @@
 
 public class LinkedList {
+	
 	static int size=0;
-    private Node head = null; //Zeiger auf erstes Element
+    private Node head = null; 
 
     public void add(int value){
         size++;
-    	Node node = new Node(value); //neues Node (Speicher) wird erstellt.
+    	Node node = new Node(value); 
         
         //List empty
-        if(head == null) { 	//wenn Pointer auf nichts zeigt (erster Aufruf von add() )
-            head = node;	//soll sie auf das neu erstellte, erste Node zeigen
+        if(head == null) { 	
+            head = node;	
             return;
         }
 
-        Node tmp = head; //zweiter Pointer tmp, zeigt auf dasselbe Element wie head
+        Node tmp = head; 
         while (tmp.getNext()!=null) 
         {
             tmp = tmp.getNext();
@@ -41,12 +42,12 @@ public class LinkedList {
     
     public void delete(int index) 
     {
-    	int i; 			//an diesem Index stoppt Programm
+    	int i; 			
     	
-    	Node temp=head; 	//von Beginn der Liste
+    	Node temp=head; 	
     	for(i=0;i<=index-1;i++)
     	{
-    		temp=temp.getNext(); //solange Index nicht erreicht,tmp nach nächstem Ziel ausrichten
+    		temp=temp.getNext(); 
     		//System.out.print(temp.getValue());
     	}
     	
