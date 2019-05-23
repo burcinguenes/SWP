@@ -73,13 +73,29 @@ public class Matrizen{
 		
 		Matrizen prod = new Matrizen(produkt);
 		prod.getMatrize();
-	}
-	
-	/*	
-	public void MatrSkalar(Matrizen m2) 
-	{
 		
 	}
+	
+	public void MatrSkalar(Matrizen m2) throws InvalidMatrixException 
+	{
+		int [][] skalar = new int[this.matrize.length][m2.matrize[1].length];
+		
+		   for (int i = 0; i < m2.matrize[1].length; i++)
+            {
+                for (int j = 0; j < this.matrize.length; j++)
+                {
+                    for (int k = 0; k < m2.matrize.length; k++)
+                    {
+                        skalar[j][i]+= this.matrize[j][k] * m2.matrize[k][i];
+                    }
+                }
+            }
+		   
+		   Matrizen ska = new Matrizen(skalar);
+		   ska.getMatrize();
+	}
+	/*	
+
 	*/
 	
 }

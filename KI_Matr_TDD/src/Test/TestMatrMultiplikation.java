@@ -50,16 +50,16 @@ public class TestMatrMultiplikation {
 		m1.MatrMultiplikation(zahl);
 	}
 	
-	
-	/*@Test
-	public void multMatrizen() throws InvalidMatrixException 
+	@Test
+	public void skalarMatrizen() throws InvalidMatrixException 
 	{
 		Matrizen m1 = new Matrizen(new int [][] {{2,3} ,{5,4}}); 
 		Matrizen m2 = new Matrizen(new int [][] {{2,3} ,{5,4}}); 
 		
-		m1.MatrMultiplikation(m2);
-
-	}*/
+		m1.MatrSkalar(m2);
+	}
+	
+	/**/
 	
 	
 
