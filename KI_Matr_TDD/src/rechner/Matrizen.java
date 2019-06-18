@@ -7,12 +7,19 @@ package rechner;
 //				Addition
 //				Matrize mal Zahl
 
+//4. Schritt Sigmoid-Funktion einbauen
+
 public class Matrizen{
 
-	public int[][] matrize;
-		
+	public float[][] matrize;
 	
-	public Matrizen(int [][] a) throws InvalidMatrixException
+	private float[] weight;
+	private float[] bias;
+	private float[] hiddenValues;
+
+	
+	
+	public Matrizen(float [][] a) throws InvalidMatrixException
 	{
 		for(int i=0;i<=a.length-1;i++) 
 		{
@@ -25,27 +32,29 @@ public class Matrizen{
 		matrize=a;
 	}
 	
-	public int getZeilen() {
+	public float getZeilen() {
 		return matrize.length;
 	}
 	
-	public void getMatrize() 
+	/*public void getMatrize() 
 	{
-		System.out.println();
-		for(int i=0;i<=this.matrize.length-1;i++) 
+		System.out.prfloatln();
+		for(float i=0;i<=this.matrize.length-1;i++) 
 		{
-			for(int j=0;j<=this.matrize.length-1;j++) 
+			for(float j=0;j<=this.matrize.length-1;j++) 
 			{
-				System.out.print(matrize[i][j]+" ");
+				System.out.prfloat(matrize[i][j]+" ");
 			}
 			
-			System.out.println();
+			System.out.prfloatln();
 		}
-	}
+	}*/
 	
-	public void MatrAddition(Matrizen m2) throws InvalidMatrixException 
+	public Matrizen MatrAddition(Matrizen m2) throws InvalidMatrixException 
 	{	
-		int [][] summe = new int[this.matrize.length][this.matrize.length];
+		float [][] summe = new float[this.matrize.length][this.matrize.length];
+		
+		//if weil beide Summanten gleich viele Spalten und Zeilen haben müssen
 		
 		for(int i=0;i<=this.matrize.length-1;i++) 
 		{
@@ -56,12 +65,12 @@ public class Matrizen{
 		}
 		
 		Matrizen sum = new Matrizen(summe);
-		sum.getMatrize();
+		return sum;
 	}
 	
-	public void MatrMultiplikation(int zahl) throws InvalidMatrixException 
+	public Matrizen MatrMultZahl(int zahl) throws InvalidMatrixException 
 	{
-		int [][] produkt = new int[this.matrize.length][this.matrize.length];
+		float [][] produkt = new float[this.matrize.length][this.matrize.length];
 		
 		for(int i=0;i<=this.matrize.length-1;i++) 
 		{
@@ -72,13 +81,13 @@ public class Matrizen{
 		}
 		
 		Matrizen prod = new Matrizen(produkt);
-		prod.getMatrize();
+		return prod;
 		
 	}
 	
-	public void MatrSkalar(Matrizen m2) throws InvalidMatrixException 
+	public Matrizen MatrMult(Matrizen m2) throws InvalidMatrixException 
 	{
-		int [][] skalar = new int[this.matrize.length][m2.matrize[1].length];
+		float [][] skalar = new float[this.matrize.length][m2.matrize[1].length];
 		
 		   for (int i = 0; i < m2.matrize[1].length; i++)
             {
@@ -92,10 +101,22 @@ public class Matrizen{
             }
 		   
 		   Matrizen ska = new Matrizen(skalar);
-		   ska.getMatrize();
+		   return ska;
 	}
-	/*	
+	
 
-	*/
+	public boolean equals(Matrizen matr) {
+		
+		for(int i=0;i<=this.matrize.length-1;i++) 
+		{
+			for(int j=0;j<=this.matrize.length-1;j++) 
+			{
+				if(matr.matrize[i][j] != this.matrize[i][j]) return false;
+			}		
+		}
+		
+		return true;
+	}
+	
 	
 }
